@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="turtle" xmlns:xacro="https://ros.org/wiki/xacro">
+  <gazebo reference="right_wheel">
+    <mu1>1000000000000</mu1>
+    <mu1>1000000000000</mu1>
+    <kp>1000000000000</kp>
+    <kd>10</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>5</maxVel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>
+  <gazebo reference="left_wheel">
+    <mu1>1000000000000</mu1>
+    <mu1>1000000000000</mu1>
+    <kp>1000000000000</kp>
+    <kd>10</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>5</maxVel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>  
+  <gazebo reference="front_caster">
+    <mu1>0.1</mu1>
+    <mu1>0.1</mu1>
+    <kp>1000000000000</kp>
+    <kd>100</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>5</maxVel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>
+  <gazebo reference="back_caster">
+    <mu1>0.1</mu1>
+    <mu1>0.1</mu1>
+    <kp>1000000000000</kp>
+    <kd>100</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>5</maxVel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>
+
+</robot>

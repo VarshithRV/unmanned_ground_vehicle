@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name='turtle'>
+    <link name='base' />
+    <link name='body'>
+        <visual>
+            <origin>
+                <xyz>0 0 0</xyz>
+                <rpy>0 0 0</rpy>
+            </origin>
+            <geometry>
+                <cylinder radius = '0.2' length='0.2'/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin>
+                <xyz>0 0 0</xyz>
+                <rpy>0 0 0</rpy>
+            </origin>
+            <geometry>
+                <cylinder radius = '0.2' length='0.2'/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0133333333333" ixy="0.0" ixz="0.0" iyy="0.0133333333333" iyz="0.0" izz="0.02"/>
+        </inertial>
+    </link>
+
+    <joint name='base_body_joint' type='fixed'>
+        <parent link='base'/>
+        <child link='body'/>
+        <origin xyz="0 0 0.15" rpy="0 0 0"/>
+    </joint>
+
+    <link name='right_wheel'>
+        <visual>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.125" length="0.1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.125" length="0.1"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.3"/>
+            <inertia ixx="2.34375000e-03" ixy="0.0" ixz="5.64485634e-20" iyy="1.42187500e-03" iyz="0.0" izz="1.42187500e-03"/>
+        </inertial>
+        
+    </link>
+
+    <joint name="body_right_wheel_joint" type='continuous'>
+        <parent link='body'/>
+        <child link='right_wheel'/>
+        <origin xyz="0 -0.251 -0.025" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <!-- <limit effort="1000" velocity="1000" lower="-3.14159265359" upper="3.14159265359"/>
+        <dynamics damping="0.7" friction="0.5"/> -->
+    </joint>
+
+     <link name='left_wheel'>
+        <visual>
+            <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.125" length="0.1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+            <geometry>
+                <cylinder radius="0.125" length="0.1"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.3"/>
+            <inertia ixx="2.34375000e-03" ixy="0.0" ixz="5.64485634e-20" iyy="1.42187500e-03" iyz="0.0" izz="1.42187500e-03"/>
+        </inertial>
+    </link>
+
+     <joint name="body_left_wheel_joint" type='continuous'>
+        <parent link='body'/>
+        <child link='left_wheel'/>
+        <origin xyz="0 0.251 -0.025" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <!-- <limit effort="1000" velocity="1000" lower="-3.14159265359" upper="3.14159265359"/>
+        <dynamics damping="0.7" friction="0.5"/> -->
+    </joint>
+
+     <link name='front_caster'>
+        <visual>
+          <geometry>
+            <sphere radius='0.05'/>
+          </geometry>
+        </visual>
+        <collision>
+            <geometry>
+              <sphere radius='0.05'/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.05"/>
+            <inertia ixx="5e-05" ixy="0.0" ixz="0.0" iyy="5e-05" iyz="0.0" izz="5e-05"/>
+        </inertial>
+        
+     </link>
+
+    <joint name='body_front_caster_joint' type='fixed'>
+      <parent link='body'/>
+      <child link='front_caster'/>
+      <origin xyz='0.15 0 -0.1' rpy='0 0 0'/>
+    </joint>
+
+     <link name='back_caster'>
+        <visual>
+          <geometry>
+            <sphere radius='0.05'/>
+          </geometry>
+        </visual>
+        <collision>
+            <geometry>
+              <sphere radius='0.05'/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.05"/>
+            <inertia ixx="5e-05" ixy="0.0" ixz="0.0" iyy="5e-05" iyz="0.0" izz="5e-05"/>
+        </inertial>
+     </link>
+
+     <joint name='body_back_caster_joint' type='fixed'>
+      <parent link='body'/>
+      <child link='back_caster'/>
+      <origin xyz='-0.15 0 -0.1' rpy='0 0 0'/>
+    </joint>
+</robot>
