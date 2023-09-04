@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <!-- load params from the urdf file -->
-    <arg name="model" default="$(find collision_detection)/urdf/description.urdf.xacro"/>
-    <!-- <rosparam param="robot_description" file='$(find collision_detection)/urdf/description.urdf' command='load'/> -->
-    <param name="robot_description"  command="$(find xacro)/xacro --inorder $(arg model)"/>
+    <rosparam param="robot_description" file='$(find collision_detection)/urdf/description.urdf' command='load'/>
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_publisher"/>
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_publisher"/>
     <node pkg='rviz' type="rviz" name="rviz"  args="-d $(find collision_detection)/rviz_configuration/display.rviz"/>

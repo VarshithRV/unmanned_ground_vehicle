@@ -138,7 +138,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: body
+    Fixed Frame: base
     Frame Rate: 30
   Name: root
   Tools:
@@ -170,17 +170,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.12850478291511536
-        Y: 0.04074576869606972
-        Z: -0.05775981396436691
+        X: -0.04795863479375839
+        Y: 0.04577149823307991
+        Z: -0.2210298478603363
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.04020198434591293
+      Pitch: 0.3202016055583954
       Target Frame: <Fixed Frame>
-      Yaw: 3.6486103534698486
+      Yaw: 5.416779518127441
     Saved:
       - Class: rviz/Orbit
         Distance: 1.9204261302947998
@@ -222,6 +222,26 @@ Visualization Manager:
         Pitch: 0.04020198434591293
         Target Frame: <Fixed Frame>
         Yaw: 3.6486103534698486
+      - Class: rviz/Orbit
+        Distance: 1.9204261302947998
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Field of View: 0.7853981852531433
+        Focal Point:
+          X: -0.04795863479375839
+          Y: 0.04577149823307991
+          Z: -0.2210298478603363
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.14020207524299622
+        Target Frame: <Fixed Frame>
+        Yaw: 2.8986029624938965
 Window Geometry:
   Displays:
     collapsed: false
@@ -239,4 +259,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 580
-  Y: 54
+  Y: 27
