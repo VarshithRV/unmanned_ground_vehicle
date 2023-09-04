@@ -1,0 +1,11 @@
+<!-- launch file to launch gazebo with the collision_detection/worls/obstacle.world world -->
+<launch>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(find collision_detection)/worlds/obstacle.world"/>
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="headless" value="false"/>
+      <arg name="debug" value="false"/>
+    </include>
+</launch>
