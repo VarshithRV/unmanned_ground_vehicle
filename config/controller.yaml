@@ -1,0 +1,7 @@
+wheel_left_controller:
+  type: "velocity_controller/JointVelocityController"
+  joints: "body_left_wheel_joint"
+
+wheel_right_controller:
+  type: "velocity_controller/JointVelocityController"
+  joints: "body_right_wheel_joint"

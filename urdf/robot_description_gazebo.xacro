@@ -36,5 +36,33 @@
     <maxVel>5</maxVel>
     <fdir1>1 0 0</fdir1>
   </gazebo>
+  
+  <transmission name="wheel_right_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_right_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wheel_left_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_left_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
 
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotSimType>gazebo_ros_control/DefaultRobotHwSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
 </robot>
