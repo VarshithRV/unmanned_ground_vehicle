@@ -1,5 +1,27 @@
 <?xml version="1.0"?>
 <robot name="turtle" xmlns:xacro="https://ros.org/wiki/xacro">
+  <transmission name="right_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="left_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
   <gazebo reference="right_wheel">
     <mu1>1000000000000</mu1>
     <mu1>1000000000000</mu1>
@@ -36,32 +58,10 @@
     <maxVel>5</maxVel>
     <fdir1>1 0 0</fdir1>
   </gazebo>
-  
-  <transmission name="wheel_right_transmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="body_right_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="wheel_right_motor">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
-  
-  <transmission name="wheel_left_transmission">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="body_left_wheel_joint">
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="wheel_left_motor">
-      <mechanicalReduction>1.0</mechanicalReduction>
-      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
 
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotSimType>gazebo_ros_control/DefaultRobotHwSim</robotSimType>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <legacyModeNS>true</legacyModeNS>
     </plugin>
   </gazebo>

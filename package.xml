@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>collision_detection</name>
+  <name>unmanned_ground_vehicle</name>
   <version>0.0.0</version>
   <description>The collision_detection package</description>
 

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam file="$(find collision_detection)/config/controller.yaml" command="load"></rosparam>
+    <rosparam file="$(find joint_state_controller)/joint_state_controller.yaml" command="load"></rosparam>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" 
+            respawn='false' output='screen'/>
+    <node pkg="controller_manager" type="spawner" name="controller_manager"
+            respawn='false' output='screen' args='left_wheel_controller right_wheel_controller joint_state_controller'/>
+</launch>
